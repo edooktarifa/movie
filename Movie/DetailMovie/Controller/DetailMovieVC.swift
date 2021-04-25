@@ -11,8 +11,8 @@ class DetailMovieVC: UIViewController {
 
     let detailMovieLabel: UILabel = {
         let detail = UILabel()
-        detail.textColor = .red
-        detail.font = .systemFont(ofSize: 12)
+        detail.textColor = .black
+        detail.font = .systemFont(ofSize: 14)
         detail.textAlignment = .center
         return detail
     }()
@@ -25,6 +25,7 @@ class DetailMovieVC: UIViewController {
     }()
     
     var detail : String?
+    var imageMovie : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +39,12 @@ class DetailMovieVC: UIViewController {
         view.addSubview(detailMovieLabel)
         view.addSubview(detailMovieImage)
         
-        detailMovieImage.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: -20, width: 0, height: view.frame.height / 2, enableInsets: false)
+        detailMovieImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: view.frame.height / 3, enableInsets: false)
         
-        detailMovieLabel.anchor(top: detailMovieImage.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: -20, width: 0, height: 0, enableInsets: false)
+        detailMovieLabel.anchor(top: detailMovieImage.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 0, enableInsets: false)
         
-        detailMovieImage.image = #imageLiteral(resourceName: "flutterImg")
+        detailMovieImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(imageMovie ?? "")"))
         detailMovieLabel.text = detail
-        
     }
 
 }

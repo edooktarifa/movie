@@ -6,21 +6,24 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieCell: UITableViewCell {
     
     let titleMovie : UILabel = {
         let label = UILabel()
-        label.textColor = .red
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 13)
         return label
     }()
     
     let imageMovie : UIImageView = {
         let image = UIImageView()
-        image.layer.cornerRadius = 40
-        image.contentMode = .scaleAspectFit
-        image.backgroundColor = .red
+        image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
+        image.layer.cornerRadius = 40
+        image.layer.masksToBounds = true
         return image
     }()
     
@@ -38,8 +41,6 @@ class MovieCell: UITableViewCell {
         imageMovie.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 0, width: 80, height: 0, enableInsets: false)
         
         titleMovie.anchor(top: topAnchor, left: imageMovie.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 20, width: 0, height: 0, enableInsets: false)
-        
-        imageMovie.image = #imageLiteral(resourceName: "flutterImg")
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -55,6 +56,25 @@ class MovieCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    func setContent(content: Movies){
+        titleMovie.text = content.title
+        imageMovie.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(content.img ?? "")"))
+        
+        imageMovie.kf.setImage(
+            with: URL(string: "https://image.tmdb.org/t/p/w500/\(content.img ?? "")"),
+            placeholder: UIImage(named: "ic-no_image"),
+            options: [
+                
+            ],
+            progressBlock: { receivedSize, totalSize in
+                // Progress updated
+            },
+            completionHandler: { result in
+                // Done
+            }
+        )
     }
     
 }

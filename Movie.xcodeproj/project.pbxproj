@@ -19,8 +19,12 @@
 		FD069CC9263161DE00BBADE2 /* DetailMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD069CC8263161DE00BBADE2 /* DetailMovieVC.swift */; };
 		FD069CD1263165FA00BBADE2 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD069CD0263165FA00BBADE2 /* MovieCell.swift */; };
 		FD069CDC263261C300BBADE2 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD069CDB263261C300BBADE2 /* Extension+UIView.swift */; };
-		FD069CF6263267B200BBADE2 /* CoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD069CF5263267B200BBADE2 /* CoreApi.swift */; };
 		FD069CFE2632684E00BBADE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD069CFD2632684E00BBADE2 /* Constants.swift */; };
+		FD069D112632B27400BBADE2 /* ListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD069D102632B27400BBADE2 /* ListVM.swift */; };
+		FD069D2F2632B64500BBADE2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD069D2E2632B64500BBADE2 /* APIManager.swift */; };
+		FD069D3D2632B93400BBADE2 /* ListMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD069D3C2632B93400BBADE2 /* ListMovieModel.swift */; };
+		FD069DDA2632E5D400BBADE2 /* Movie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD069DD82632E5D400BBADE2 /* Movie.xcdatamodeld */; };
+		FD069E98263466E800BBADE2 /* ListVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD069E97263466E800BBADE2 /* ListVMTest.swift */; };
 		FF4D8F964AB748DC820730A2 /* Pods_Movie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981DA4399642DDDFD153B502 /* Pods_Movie.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +71,12 @@
 		FD069CC8263161DE00BBADE2 /* DetailMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieVC.swift; sourceTree = "<group>"; };
 		FD069CD0263165FA00BBADE2 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		FD069CDB263261C300BBADE2 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
-		FD069CF5263267B200BBADE2 /* CoreApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreApi.swift; sourceTree = "<group>"; };
 		FD069CFD2632684E00BBADE2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FD069D102632B27400BBADE2 /* ListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVM.swift; sourceTree = "<group>"; };
+		FD069D2E2632B64500BBADE2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		FD069D3C2632B93400BBADE2 /* ListMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMovieModel.swift; sourceTree = "<group>"; };
+		FD069DD92632E5D400BBADE2 /* Movie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie.xcdatamodel; sourceTree = "<group>"; };
+		FD069E97263466E800BBADE2 /* ListVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVMTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +155,7 @@
 		FD069C7E26315C5500BBADE2 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				FD069D152632B2A600BBADE2 /* ApiManager */,
 				FD069CF4263267A000BBADE2 /* Base */,
 				FD069CDA263261AC00BBADE2 /* Extension */,
 				FD069CC6263161C000BBADE2 /* DetailMovie */,
@@ -156,6 +165,7 @@
 				FD069C8826315C5800BBADE2 /* Assets.xcassets */,
 				FD069C8A26315C5800BBADE2 /* LaunchScreen.storyboard */,
 				FD069C8D26315C5800BBADE2 /* Info.plist */,
+				FD069DD82632E5D400BBADE2 /* Movie.xcdatamodeld */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -165,6 +175,7 @@
 			children = (
 				FD069C9626315C5800BBADE2 /* MovieTests.swift */,
 				FD069C9826315C5800BBADE2 /* Info.plist */,
+				FD069E97263466E800BBADE2 /* ListVMTest.swift */,
 			);
 			path = MovieTests;
 			sourceTree = "<group>";
@@ -224,8 +235,8 @@
 		FD069CF4263267A000BBADE2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				FD069CF5263267B200BBADE2 /* CoreApi.swift */,
 				FD069CFD2632684E00BBADE2 /* Constants.swift */,
+				FD069D2E2632B64500BBADE2 /* APIManager.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -233,6 +244,7 @@
 		FD069D05263268AF00BBADE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FD069D3C2632B93400BBADE2 /* ListMovieModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,8 +252,16 @@
 		FD069D06263268B300BBADE2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FD069D102632B27400BBADE2 /* ListVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FD069D152632B2A600BBADE2 /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApiManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +294,7 @@
 				FD069C8E26315C5800BBADE2 /* Sources */,
 				FD069C8F26315C5800BBADE2 /* Frameworks */,
 				FD069C9026315C5800BBADE2 /* Resources */,
+				8DA76BC32E0A6C0CBB8C5D2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -414,6 +435,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Movie/Pods-Movie-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8DA76BC32E0A6C0CBB8C5D2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieTests/Pods-MovieTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieTests/Pods-MovieTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieTests/Pods-MovieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9B0A0FECFE940901D6D8EDC1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -484,11 +522,14 @@
 			files = (
 				FD069CFE2632684E00BBADE2 /* Constants.swift in Sources */,
 				FD069CC9263161DE00BBADE2 /* DetailMovieVC.swift in Sources */,
+				FD069DDA2632E5D400BBADE2 /* Movie.xcdatamodeld in Sources */,
 				FD069C8426315C5500BBADE2 /* ListMovieVC.swift in Sources */,
 				FD069CDC263261C300BBADE2 /* Extension+UIView.swift in Sources */,
-				FD069CF6263267B200BBADE2 /* CoreApi.swift in Sources */,
+				FD069D2F2632B64500BBADE2 /* APIManager.swift in Sources */,
 				FD069CD1263165FA00BBADE2 /* MovieCell.swift in Sources */,
+				FD069D112632B27400BBADE2 /* ListVM.swift in Sources */,
 				FD069C8026315C5500BBADE2 /* AppDelegate.swift in Sources */,
+				FD069D3D2632B93400BBADE2 /* ListMovieModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD069E98263466E800BBADE2 /* ListVMTest.swift in Sources */,
 				FD069C9726315C5800BBADE2 /* MovieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,6 +863,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FD069DD82632E5D400BBADE2 /* Movie.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FD069DD92632E5D400BBADE2 /* Movie.xcdatamodel */,
+			);
+			currentVersion = FD069DD92632E5D400BBADE2 /* Movie.xcdatamodel */;
+			path = Movie.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FD069C7426315C5500BBADE2 /* Project object */;
 }

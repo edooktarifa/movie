@@ -11,10 +11,14 @@ target 'Movie' do
   target 'MovieTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Alamofire',              '4.8.0'
+    pod 'Kingfisher'
   end
 
   target 'MovieUITests' do
     # Pods for testing
+    pod 'Alamofire',              '4.8.0'
+    pod 'Kingfisher'
   end
 
 end
